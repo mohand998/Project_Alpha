@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ghostwhite;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0fbff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px lawngreen;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 600px;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto 10px;
+            position: relative;
+        }
+        @keyframes fillProgress {
+            0% { width: 0; }
+        }
+
+               .progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            background: #52c234;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #c50000, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #c50000, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            animation: fillProgress 1s forwards;
+        }
+             .patient-info {
+            max-width: 600px;
+            /*margin: 50px auto;*/
+            padding: 20px;
+            background-color: white;
+            /*border-radius: px;*/
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            margin-bottom: 20px;
+            margin-left: 80px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #bcdbdf;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 240px;
+        }
+         .footer {
+            text-align: center;
+            background-color: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+                   .offcanvas-body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: black; /* Light gray background color */
+            border-bottom: 1px solid black; /* Light gray border bottom */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Shadow effect */
+        }
+            h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1.25rem;
+        }
+        nav {
+            margin-top: -1px;
+            margin-left: 900px;
+
+        }
+        nav a {
+            margin-right: 17px;
+            text-decoration: none;
+            color: white; /* Dark gray text color */
+        }
+        .logo {
+    max-width: 170px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+    </style>
+</head>
+<body>
+ <div class="offcanvas-body">
+<!--        <h5 onclick="window.location.href='/home'" style="color: slateblue; cursor: pointer;font-size: 25px">Heart App</h5>-->
+        <a href="/home">
+    <img src="../static/lo.png" alt="Photo" class="logo">
+</a>
+    </div>
+    <div class="container">
+        <h1 style="color: #f23a3a; font-family: 'HoloLens MDL2 Assets',sans-serif; font-size: 35px">"Heart Attack Prediction Result"</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+        <div class="prediction">
+    <p style="color:#303841; font-weight: bolder">Predicted Probability: {{ probability }}%</p>
+    {% if probability == 0 %}
+
+       <img src="../static/pic2.jpeg" alt="Prescription for less than 30%" style="width: 300px; height: 200px;filter: grayscale(100%);">
+       <p style="color: #ee6f57; font-weight: bold">**No immediate cause for concern; current care is adequate. 😊</p>
+    {% elif probability == 1 %}
+
+        <img src="../static/pic1.jpeg" alt="Prescription for less than 30%" style="width: 300px; height: 200px;filter: grayscale(100%);">
+        <p style="color: #ee6f57;font-weight: bold">**Mild concern advised; monitor and adjust care regimen. 🙂</p>
+    {% else %}
+
+        <img src="../static/pic3.jpeg" alt="Prescription for less than 30%" style="width: 300px; height: 200px; filter: grayscale(100%);">
+        <p style="color: #ee6f57; font-weight: bold">**Moderate concern warranted; "Cardiologist" consultation recommended. 😟</p>
+    {% endif %}
+</div>
+
+
+        <div class="patient-info">
+    <h2 style="text-align: center">User Information</h2>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>{{ age }}</td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td>{{ sex }}</td>
+        </tr>
+        <tr>
+            <td>Chest Pain Type (cp)</td>
+            <td>{{ cp }}</td>
+        </tr>
+         <tr>
+            <td>Resting Blood Pressure(trestbps)</td>
+            <td>{{ trestbps }}</td>
+        </tr>
+         <tr>
+            <td>Cholesterol(chol)</td>
+            <td>{{ chol }}</td>
+        </tr>
+         <tr>
+            <td>Fasting Blood Sugar(fbs)</td>
+            <td>{{ fbs }}</td>
+        </tr>
+        <tr>
+            <td>Resting ECG</td>
+            <td>{{ restecg }}</td>
+        </tr>
+        <tr>
+            <td>Maximum Heart Rate Achieved</td>
+            <td>{{ thalach }}</td>
+        </tr>
+        <tr>
+            <td>Exercise Induced Angina</td>
+            <td>{{ exang }}</td>
+        </tr>
+        <tr>
+            <td>ST Depression Induced by Exercise</td>
+            <td>{{ oldpeak }}</td>
+        </tr>
+        <tr>
+            <td>Slope of the Peak Exercise ST Segment</td>
+            <td>{{ slope }}</td>
+        </tr>
+        <tr>
+            <td>Number of Major Vessels Colored by Flouroscopy</td>
+            <td>{{ ca }}</td>
+        </tr>
+        <tr>
+            <td>Thal</td>
+            <td>{{ thal }}</td>
+        </tr>
+          <tr>
+            <td style="font-weight: bolder">Predicted Percentage(%)</td>
+            <td style="font-weight: bolder">{{ probability }}</td>
+        </tr>
+        <!-- Add more rows for other parameters -->
+    </table>
+<!--            <button class="button" id="savePdfButton">Save as PDF</button>-->
+</div>
+      <a href="/home" style="color: blue;">Go back to home page</a>
+    </div>
+
+     <div class="footer">
+        <p class="small-text">&copy; 2024 Our Project. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+    <script>
+        var progressBar = document.getElementById('progressBar');
+        var probability = {{ probability }};
+        
+        // Set the width of the progress bar based on the probability value
+        if (probability == 0) {
+            progressBar.style.width = '25%'; // Fill 25% for probability 0
+        } else if (probability == 1) {
+            progressBar.style.width = '50%'; // Fill 50% for probability 1
+        } else if (probability == 2) {
+            progressBar.style.width = '75%'; // Fill 75% for probability 2
+        } else {
+            progressBar.style.width = '100%'; // Fill 100% for other probabilities
+        }
+    </script>
+    
+    <script src="../static/jspdf.umd.min.js" ></script>
+   
+</body>
+</html>
+
+
+<!-- <script>
+    document.getElementById('savePdfButton').addEventListener('click', function() {
+        // Create a new jsPDF instance
+        const pdf = new jsPDF();
+
+        // Select the container element containing the content you want to convert to PDF
+        const element = document.querySelector('.patient-info');
+
+        // Use jsPDF to add HTML content to PDF
+        pdf.html(element, {
+            callback: function(pdf) {
+                // Save the PDF file
+                pdf.save('heart_attack_prediction_result.pdf');
+            }
+        });
+    });
+</script> -->

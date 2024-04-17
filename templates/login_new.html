@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+          .logo {
+              max-width: 70px; /* Set the maximum width of the logo */
+              height: auto; /* Maintain aspect ratio */
+              margin-top: 50px;
+              margin-left: 14px;
+              margin-bottom: -220px;
+          }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #f8f9fa; !*Background color of the page*!*/
+    background-color: #2C4249;
+}
+
+.login-container {
+    max-width: 360px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /*backdrop-filter: blur(1000px); !* Blurred effect *!*/
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: blue;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: blue;
+}
+
+input[type="Email"],
+input[type="password"],
+input[type="submit"] {
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: black;
+    background-color: #2C4249; /*Email and Pass block colors*/
+}
+
+input[type="submit"] {
+    /*background-color: #3498db;*/
+    background-color: lawngreen;
+    color: black;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+
+}
+
+input[type="submit"]:hover {
+    /*background-color: #2980b9;*/
+    background-color: lawngreen;
+    /*text-align: left;*/
+}
+
+.login-with-chrome {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-with-chrome a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.login-with-chrome a:hover {
+    text-decoration: underline;
+}
+
+
+
+.login-options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-icon {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.login-icon img {
+    width: 40px; /* Adjust icon size as needed */
+    height: 40px;
+    border-radius: 50%; /* Make the icons circular */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+}
+
+.terms {
+    margin-top: -100px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    /*margin-bottom: 500px;*/
+}
+
+.terms a {
+    color: #888;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+.alt{
+
+    color: red;
+    font-size: 14px;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h1>Login</h1>
+        <form class="form" method="post" action="/login_validation">
+
+            <label for="Email">Email:</label><br>
+            <input type="Email" id="Email" name="Email" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <div class="center">
+                <input type="submit" value="Login">
+
+            </div>
+
+        </form>
+              {% if message is defined and message %}
+               <div class="alt" style="margin-top: 10px">{{message}}</div>
+            {% endif %}
+        <div class="login-options">
+            <p><span style="color: blue;">Or login with:</span></p>
+            <a href="#" class="login-icon"><img src="../static/git.png" alt="GitHub"></a>
+            <a href="#" class="login-icon"><img src="../static/Mic.png" alt="Microsoft"></a>
+            <a href="#" class="login-icon"><img src="../static/google.png" alt="Google"></a>
+            <!-- Add more login options as needed -->
+        </div>
+        <p style="color: blue;">New Member? <a href="/register" target="_blank" style="color: lawngreen; font-size: 15px">Click Here</a></p>
+    </div>
+ <div class="terms">
+            <img src="../static/jio.png" alt="Logo" class="logo">
+            <p>By logging in, you agree to our <a href="terms.html">Terms and Conditions</a>.</p>
+            <p>&copy; 2024 Terms & Conditions. All rights reserved.</p>
+
+        </div>
+</body>
+</html>

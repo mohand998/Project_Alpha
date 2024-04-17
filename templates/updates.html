@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>FAQs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: ghostwhite;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #b7f5de;
+            border-radius: 10px;
+            box-shadow: 0 4px 40px #b7f5de;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666666;
+        }
+         .footer {
+            text-align: center;
+            background-color: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+            margin-top: 200px;
+            font-size: 12px;
+        }
+          .logo {
+    max-width: 170px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+             .offcanvas-body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: black; /* Light gray background color */
+            border-bottom: 1px solid black; /* Light gray border bottom */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Shadow effect */
+        }
+        h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1.25rem;
+        }
+
+        .btn-outline-primary {
+            text-decoration: none;
+            color: lawngreen; /* Primary color */
+            border: 1px solid lawngreen; /* Primary color border */
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="offcanvas-body">
+        <a href="/home">
+    <img src="../static/lo.png" alt="Photo" class="logo">
+</a>
+        <nav class="ml-auto">
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/updates">Updates</a>
+        </nav>
+
+        <a class="btn-outline-primary" href="/login">Logout</a>
+    </div>
+    <div class="container">
+        <h1 style="color:#ff5722; font-family: 'Droid Sans Mono Slashed', sans-serif; margin-top: 1px">FAQ'S</h1>
+
+        <div class="faq-item">
+            <h3>How does the heart attack prediction feature work?</h3>
+            <p>The heart attack prediction feature uses machine learning algorithms to analyze various health parameters and predict the likelihood of a heart attack.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is the app suitable for all age groups?</h3>
+            <p>Yes, the app is designed to be beneficial for individuals of all age groups who are concerned about their heart health.</p>
+        </div>
+            <div class="faq-item">
+        <h3>Is this application is available in APP store/Playstore?</h3>
+        <p>No, This facility is still under the beta stage, and the developers are still thinking to deploy it in APP.</p>
+    </div>
+        <div class="faq-item">
+        <h3>Can I use the app to track my daily activities?</h3>
+        <p>Yes, the app provides features to track your daily activities and monitor your heart health over time.</p>
+    </div>
+        <div class="faq-item">
+        <h3>Is this platform trustworthy?</h3>
+        <p>Yes, This application is made with utmost priority of security we made sure the user details will remain safe.</p>
+    </div>
+        <div class="faq-item">
+        <h3>How accurate are the predictions provided by the model?</h3>
+            <p>Nearly 85.4%, is the accuracy of the model</p>
+    </div>
+        <div class="faq-item">
+        <h3>Why should someone require this facility?</h3>
+        <p>As we all know cardiac arrests are seen in every age classes we built this application with the intention to provide risk probability in advance so that one get atentive  </p>
+    </div>
+      <div class="faq-item">
+        <h3>Where can I find the parameters required for filling out the form?</h3>
+        <p>The parameters that you see while filling out the Heart Attack Prediction form are the inputs that could only possible to get by consulting your Doctor</p>
+    </div>
+    <div class="faq-item">
+        <h3>What should I do if i receive a high probability prediction? Should I consider myself that I might suffer Heart Attack in future?</h3>
+        <p>Please go through our Privacy statment</p>
+    </div>
+
+    </div>
+<div class="footer">
+        <p class="small-text">&copy; 2024 Our Project. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+</body>
+</html>

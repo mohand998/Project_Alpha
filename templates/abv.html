@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Heart App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .offcanvas-body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f8f9fa; /* Light gray background color */
+            border-bottom: 1px solid #ddd; /* Light gray border bottom */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow effect */
+        }
+        h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1.25rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333; /* Dark gray text color */
+        }
+        .btn-outline-primary {
+            text-decoration: none;
+            color: #007bff; /* Primary color */
+            border: 1px solid #007bff; /* Primary color border */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="offcanvas-body">
+        <h5>Heart App</h5>
+
+        <nav class="ml-auto">
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Updates</a>
+        </nav>
+
+        <a class="btn btn-outline-primary" href="#">Logout</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Heart Attack Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White background color */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow effect */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Primary color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade of primary color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Attack Prediction Form</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="age">Age (Range: 18-100):</label>
+                <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter age" required>
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="">Select...</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cp">Chest Pain Type:</label>
+                <select id="cp" name="cp" required>
+                    <option value="">Select...</option>
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-Anginal Pain</option>
+                    <option value="4">Asymptomatic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
+                <input type="number" id="trestbps" name="trestbps" min="0" placeholder="Enter resting blood pressure" required>
+            </div>
+            <div class="form-group">
+                <label for="chol">Serum Cholesterol (mg/dl):</label>
+                <input type="number" id="chol" name="chol" min="0" placeholder="Enter serum cholesterol" required>
+            </div>
+            <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+                <select id="fbs" name="fbs" required>
+                    <option value="">Select...</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="restecg">Resting Electrocardiographic Results:</label>
+                <select id="restecg" name="restecg" required>
+                    <option value="">Select...</option>
+                    <option value="0">Normal</option>
+                    <option value="1">Having ST-T wave abnormality</option>
+                    <option value="2">Showing probable or definite left ventricular hypertrophy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thalach">Maximum Heart Rate Achieved:</label>
+                <input type="number" id="thalach" name="thalach" min="0" placeholder="Enter maximum heart rate achieved" required>
+            </div>
+            <div class="form-group">
+                <label for="exang">Exercise Induced Angina:</label>
+                <select id="exang" name="exang" required>
+                    <option value="">Select...</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest:</label>
+                <input type="number" id="oldpeak" name="oldpeak" min="0" placeholder="Enter ST depression" required>
+            </div>
+            <div class="form-group">
+                <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+                <select id="slope" name="slope" required>
+                    <option value="">Select...</option>
+                    <option value="1">Upsloping</option>
+                    <option value="2">Flat</option>
+                    <option value="3">Downsloping</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="caa">Number of Major Vessels Colored by Flourosopy:</label>
+                <input type="number" id="caa" name
+            <div class="form-group">
+                <label for="caa">Number of Major Vessels Colored by Flourosopy:</label>
+                <input type="number" id="caa" name="caa" min="0" max="3" placeholder="Enter number of major vessels colored" required>
+            </div>
+            <div class="form-group">
+                <label for="thal">Thalassemia:</label>
+                <select id="thal" name="thal" required>
+                    <option value="">Select...</option>
+                    <option value="3">Normal</option>
+                    <option value="6">Fixed Defect</option>
+                    <option value="7">Reversible Defect</option>
+                </select>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+//login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Bootstrap demo</title>
+</head>
+<body class="bg-nav">
+    <nav class="navbar">
+        <a href="" class="navbar-brand text-light">Heart Attack App</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="text-light display-2 mt-50" style="font-size:70px">Your Heart Our Responsibility</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form" method="post" action="/login_validation">
+                            <label>Email</label><br>
+                            <input type="email" class="form-control" name="email"><br>
+                            <label>Password</label><br>
+                            <input type="password" class="form-control" name="password"><br><br>
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                        </form>
+                        <p>Not a member yet? <a href="/register">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Bootstrap demo</title>
+</head>
+<body class="bg-nav">
+    <nav class="navbar">
+        <a href="" class="navbar-brand text-light">Heart Attack App</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="text-light display-2 mt-50" style="font-size:70px">Your Heart Our Responsibility</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form" method="post" action="/login_validation">
+                            <label>Email</label><br>
+                            <input type="email" class="form-control" name="email"><br>
+                            <label>Password</label><br>
+                            <input type="password" class="form-control" name="password"><br><br>
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                        </form>
+                        <p>Not a member yet? <a href="/register">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+
+
+        /* Style the form container */
+.form-container {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the form */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth */
+    max-width: 400px; /* Maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+}
+        /* Center align the <pre> element */
+pre {
+    text-align: center;
+}
+
+
+    </style>
+    <title>Bootstrap demo</title>
+</head>
+<body class="bg-nav">
+    <nav class="navbar">
+        <a href="" class="navbar-brand text-light">Heart Attack App</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8\\">
+                <p class="text-light display-2 mt-50" style="font-size:70px">
+                    Your Heart Our Responsibility</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="form-container">
+                        <form class="form" method="post" action="/login_validation">
+                            <label>Email</label><br>
+                            <input type="email" class="form-control" name="email"><br>
+                            <label>Password</label><br>
+                            <input type="password" class="form-control" name="password"><br><br>
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                        </form>
+                        <p class="mt-3 text-right">Not a member yet? <a href="/register">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .logo {
+    max-width: 170px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+       .social-icons {
+    position: absolute;
+    top: 34px;
+    right: 20px;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+       @media (max-width: 768px) {
+    .social-icons {
+        right: 24px; /* Hide social icons on smaller screens */
+    }
+}
+
+.social-icons a {
+    /*display: block;*/
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 24px;
+    color: lawngreen;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+ /* CSS styles for the layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .welcome-section {
+            background: #f5f5f5;  /* fallback for old browsers */
+
+
+            text-align: center;
+            padding: 100px 0;
+        }
+        .project-brief {
+            /*background-color: #f8f9f1;*/
+            text-align: center;
+            padding: 50px 0;
+        }
+        .video-container {
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 140px;
+            /*background-color: #66bfbf;*/
+            /*box-shadow: 0 0 20px black;*/
+            /* box-shadow: 0 0 200px grey; */
+        }
+        .footer {
+            text-align: center;
+            background: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+        }
+       .small-text{
+           font-size: 12px;
+           font-family: Arial, sans-serif;
+           margin-left: 10px;
+       }
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #2c5d63;  /* fallback for old browsers */
+    ;
+
+
+}
+
+.header {
+    /*background-color: #007bff;*/
+    background-color: black;
+    color: #fff;
+    padding: 15px;
+    /*position: ;*/
+    width: 98%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 2em;
+    /*animation: titleAnimation 1s infinite alternate;*/
+}
+
+@keyframes titleAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+.login-btn {
+    padding: 9px 22px;
+    background-color: lawngreen;
+    /*color: #007bff;*/
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.content {
+    /*margin-top: px;*/
+    padding: 20px;
+}
+
+h2 {
+    /*color: #007bff;*/
+    color: lawngreen;
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+body {
+    overflow-x: hidden;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <img src="../static/lo.png" alt="Logo" class="logo">
+        <a href="/login_new" class="login-btn">Start</a>
+    </div>
+    <div class="welcome-section">
+
+        <h2 style="margin-left: 20px; text-align: left; font-family: 'Felix Titling', sans-serif; font-weight: bold; font-size: 80px;color: lawngreen">
+        Welcome<br>to<br>Heart Attack<br>prediction!</h2>
+
+        <p style="margin-top: -70px; margin-left: -1110px; font-family: 'Nirmala UI', sans-serif; color: #283739">"Aiming to predict heart attacks for a healthier future"</p>
+    </div>
+
+     <div class="video-container" style="margin-top: 10px;box-shadow: 0 0 90px #2c5d63">
+        <h2 style="font-family: 'HoloLens MDL2 Assets', sans-serif; font-size: 40px; font-weight: lighter; color: greenyellow">Are You Curious enough to know How?</h2>
+        <p style="font-family: MingLiU_HKSCS-ExtB, sans-serif; font-size: 18px; margin-top: -20px; font-weight: normal; color: darkgray; text-shadow: 0 0 5px darkgrey">For your brief understanding on how our entire application works, please watch it</p>
+
+
+        <video width="740" height="460" controls autoplay style="float: left; margin-right: 60px; margin-left: 20px">
+            <source src="../static/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="welcome-section" style="background-color: #f5f5f5">
+        <h2 style="position: relative; right: -0px;font-family: 'Felix Titling', sans-serif; font-size: 40px; font-weight: lighter; color: mediumpurple; margin-bottom: -10px; text-align: right; margin-right: 20px; margin-top: 3px">
+            <strong style="font-weight: bold; font-size: 70px">Ever Wondered</strong><br style="font-weight: lighter">How is it possible? </h2>
+        <p style="text-align: -webkit-center; margin-right:-260px; line-height: 1.9; font-family: 'Nirmala UI', sans-serif; color:grey">
+            Experience a comprehensive overview of our website<br>
+            capabilities in this demonstration video. Explore how <br>
+            our system predicts heart attacks, simplifying Heart!!<br>
+        </p>
+
+    </div>
+
+     <div class="video-container">
+         <h2 style="font-family: 'HoloLens MDL2 Assets', sans-serif; font-size: 40px; font-weight: lighter; color: greenyellow; ">Know about Heart Disease Impacts and Preventions</h2>
+        <p style="font-family: MingLiU_HKSCS-ExtB, sans-serif; font-size: 18px; margin-top: -20px; font-weight: normal; color: darkgray; text-shadow: 0 0 5px darkgrey">Learn about the impact of heart disease and preventive measures in just a few seconds</p>
+
+ <video width="720" height="460" controls autoplay style="float: right; margin-right: 20px;">
+    <source src="../static/vid2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+     </div>
+    <div class="welcome-section" style="background-color: #f5f5f5">
+        <h2 style="position: relative; left: -0px;font-family: 'Felix Titling', sans-serif; font-size: 40px; font-weight: lighter; color: mediumpurple; margin-bottom: -10px; text-align: left; margin-left: 20px; margin-top: 3px">
+            <strong style="font-weight: bold; font-size: 70px">Want to be </strong><br style="font-weight: lighter">Aware of Your Heart Health? </h2>
+        <p style="text-align: left; margin-left: 20px; line-height: 1.9; font-family: 'Nirmala UI', sans-serif; color:grey">
+            Join us in our mission to predict heart attacks and promote a <br>
+            healthier future for all. Video courtesy of @MunsionHealthCare.<br>
+        </p>
+
+    </div>
+    <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+    <div class="footer">
+        <p class="small-text">&copy; 2024 Your Company. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

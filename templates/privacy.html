@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Heart Attack Prediction Form</title>
+    <style>
+        /* Add your custom CSS styling here */
+            body {
+        font-family: Arial, sans-serif;
+        background-color: ghostwhite; /* Light gray background color */
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: #a1dd70; /* White background color */
+        border-radius: 10px;
+        box-shadow: 0 4px 40px #a1dd70; /* Shadow effect */
+
+    }
+
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffe700; /* Dark gray text color */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        /*color: #555; !* Medium gray text color *!*/
+    }
+
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        /*border: 1px solid #a6b1e5;*/
+        border-radius: 5px;
+        font-size: 13px;
+        margin-left: -10px;
+        background-color: #fdfff0;
+    }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff004d; /* Primary color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .logo {
+    max-width: 170px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+    </style>
+</head>
+<body>
+<div class="offcanvas-body">
+        <a href="/home">
+    <img src="../static/lo.png" alt="Photo" class="logo">
+</a>
+        <nav class="ml-auto" >
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/updates">Updates</a>
+        </nav>
+
+        <a class="btn btn-outline-primary" href="/login">Logout</a>
+    </div>
+<div class="container">
+    <h1 style="color: #ff004d">Heart Attack Prediction Form</h1>
+    <form action="/privacy" method="POST", action="{{url_for('privacy')}}">
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="sex">Sex (1 for Male, 0 for Female)</label>
+            <input type="number" id="sex" name="sex" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="cp">Chest Pain(cp)[eg.,0-3]</label>
+            <input type="number" id="cp" name="cp" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="trestbps">Resting Blood Pressure(trestbps)[>=120]</label>
+            <input type="number" id="trestbps" name="trestbps" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="chol">Cholesterol(chol)[120-380]</label>
+            <input type="number" id="chol" name="chol" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="fbs">Fasting Blood Sugar(fbs)[0 or 1]</label>
+            <input type="number" id="fbs" name="fbs" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="restecg">Resting ECG[0 or 1]</label>
+            <input type="number" id="restecg" name="restecg" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="thalach">Maximum Heart Rate Achieved[>=130]</label>
+            <input type="number" id="thalach" name="thalach" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="exang">Exercise Induced Angina[0 or 1]</label>
+            <input type="number" id="exang" name="exang" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="oldpeak">ST Depression Induced by Exercise[0-6.2]</label>
+            <input type="any" id="oldpeak" name="oldpeak" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="slope">Slope of the Peak Exercise ST Segment[0-2]</label>
+            <input type="number" id="slope" name="slope" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="ca">Number of Major Vessels Colored by Flouroscopy[0-2]</label>
+            <input type="number" id="ca" name="ca" class="form-control" required>
+        </div>
+        <div class="form-group text-center">
+            <label for="thal">Thal[0-3]</label>
+            <input type="number" id="thal" name="thal" class="form-control" required>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </div>
+
+    </form>
+</div>
+     <div class="footer">
+        <p class="small-text">&copy; 2024 Our Project. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <!-- Include necessary JavaScript and Bootstrap libraries -->
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #dfebed;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #dfebed;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .member img {
+            width: 120px;
+            height: 120px;
+            /*border-radius: 50%;*/
+            margin-right: 20px;
+        }
+
+        .member-details {
+            flex: 1;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .member {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .member img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+           .logo {
+            max-width: 170px; /* Set the maximum width of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+     <div class="offcanvas-body">
+<!--        <h5 onclick="window.location.href='/home'" style="color: slateblue; cursor: pointer;font-size: 25px">Heart App</h5>-->
+        <a href="/home">
+    <img src="../static/lo.png" alt="Photo" class="logo">
+</a>
+        <nav class="ml-auto">
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/updates">Updates</a>
+        </nav>
+
+        <a class="btn btn-outline-primary" href="/login">Logout</a>
+    </div>
+    <div class="container">
+        <h1 style="font-family: 'Gill Sans Ultra Bold', sans-serif; color: #ff5722; font-weight: bolder; font-size: 40px">About Us</h1>
+        <div class="member">
+            <img src="../static/Photo.jpg" alt="Photo" style="filter: grayscale(100%);">
+            <div class="member-details">
+                <h2 style="text-align: justify">Dalamanchi Mohan</h2>
+                <p>Dalamanchi Mohan is an undergrad, currently pursuing Computer Science and Engineering
+                    <br>at Andhra University, from the batch 2020-2024, under the guidance of Dr. K. Swapna, an
+                    <br>esteemed Assistant Professor at Andhra University College of Engineering. With a profound
+                    <br>interest in Machine Learning, Web Development, and AI, Dalamanchi is enthusiastic about
+                    <br> exploring the latest advancements in these fields.
+<!--                    <br>Committed to academic excellence, Dalamanchi looks forward to contributing meaningfully to the realm of technology.</p>-->
+            </div>
+        </div>
+        <div class="member">
+            <img src="../static/Photo.jpg" alt="Photo" style="filter: grayscale(100%);">
+            <div class="member-details">
+                <h2>Alekheya Dabbiru</h2>
+                <p>Details about Alekheya Dabbiru...</p>
+            </div>
+        </div>
+        <div class="member">
+            <img src="../static/Photo.jpg" alt="Photo" style="filter: grayscale(100%);">
+            <div class="member-details">
+                <h2>Manojna</h2>
+                <p>Details about Manojna...</p>
+            </div>
+        </div>
+        <div class="member">
+            <img src="../static/Photo.jpg" alt="Photo" style="filter: grayscale(100%);">
+            <div class="member-details">
+                <h2>Divya</h2>
+                <p>Details about Divya...</p>
+            </div>
+        </div>
+    </div>
+ <div class="footer">
+        <p class="small-text">&copy; 2024 Our Project. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+
+</body>
+</html>

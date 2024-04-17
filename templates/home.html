@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Heart App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #5a3d5c;
+        }
+        .social-links {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+        .footer {
+            text-align: center;
+            background-color: #3a4750;
+            color: whitesmoke;
+            padding: 10px;
+            text-size-adjust: auto;
+            /*margin-top: 1px;*/
+        }
+        .small-text{
+            font-size: 12px;
+        }
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+   .logo {
+    max-width: 170px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+.interactive {
+    /*background-color: #f9f9f9;*/
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.interactive h2 {
+    color: #333;
+}
+
+.interactive p {
+    color: #666;
+}
+
+.interactive .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.interactive .btn:hover {
+    background-color: #0056b3;
+}
+
+        .research-paper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            /*border-radius: 5px;*/
+            background: #0F2027;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            /*margin-bottom: 20px;*/
+            /*border: 2px solid rgba(0, 0, 0, 0.1); !* Shadow effect *!*/
+            box-shadow: 0 0 20px #0F2027;
+
+        }
+
+        .research-paper .description {
+            flex: 1;
+            margin-right: 20px;
+            /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);*/
+            color: black;
+            /*text-align: center;*/
+            /*margin-top: -230px*/
+        }
+
+        .research-paper .pdf {
+            flex: 1;
+            max-width: 100%;
+            /*max-height: 80%;*/
+            text-align: center;
+            overflow: hidden;
+
+        }
+
+        .pdf embed {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+
+.faqs {
+    background: #dfebed;
+
+    padding: 20px;
+    /*border-radius: 5px;*/
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px #0F2027;
+    /*margin-top: 80px;*/
+}
+
+.faqs h2 {
+    color: #333;
+}
+
+.faqs .faq-item {
+    margin-bottom: 10px;
+}
+
+.faqs .faq-item h3 {
+    color: #333;
+}
+
+.faqs .faq-item p {
+    color: #666;
+}
+
+ .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #2470a0;
+        text-decoration: none;
+        border-radius: 30px;
+         box-shadow: 0 0 15px #2470a0;
+    }
+
+    .button:hover {
+        /*background-color: #ff5722;*/
+
+    }
+.cta-section {
+    padding: 340px;
+    /*background: #5a3d5c;*/
+}
+
+.cta-title {
+    float: left;
+    width: 70%;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: -260px;
+    margin-left: -260px; 
+    font-family:"Verdana", Geneva, sans-serif;
+
+}
+@media only screen and (max-width: 768px) {
+    .cta-section {
+        /* padding: 430px; Adjust the padding for smaller screens */
+        float: left;
+    /* width: 70%; */
+    font-size: 60px;
+
+    }
+}
+
+
+.cta-button {
+    float: right;
+    width: 40%;
+    padding: 16px;
+    font-size: 24px;
+    background-color: #5a3d5c;
+    color:lawngreen;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: -120px;
+    margin-right: -90px;
+    box-shadow: 0 0 7px lawngreen;
+}
+
+
+.cta-button:hover {
+    background-color: #f08edb;
+}
+
+.bold-text {
+    font-weight: bold;
+    font-size: 120px; /* Increase the font size as needed */
+    color:lawngreen;
+    /*text-shadow: 0 0 10px pink;*/
+
+}
+ .parameter-explanation {
+        background-color: #d3d6db;
+        padding: 20px;
+        /*border-radius: 8px;*/
+        /*margin-top: 20px;*/
+    }
+
+    .parameter-explanation h2 {
+        color: #303841;
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .parameter-explanation p {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .parameter-explanation strong {
+        color: #000;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="offcanvas-body">
+<a href="/home">
+    <img src="../static/lo.png" alt="Photo" class="logo">
+</a>
+
+        <nav class="ml-auto">
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/updates">Updates</a>
+        </nav>
+
+        <a class="btn btn-outline-primary" href="/login">Logout</a>
+    </div>
+    <div class="cta-section">
+    <h2 class="cta-title"><span class="bold-text">Are you</span><br> ready to get your<br> Heart attack result?</h2>
+
+<button class="cta-button"><a href="/privacy" style="color: inherit; text-decoration: none;">Get Started</a></button>
+
+
+</div>
+
+       <div class="research-paper">
+        <div class="description">
+             <h2 style="margin-left: 20px; text-align: left; font-family: 'Nirmala UI', sans-serif;margin-top: -40px">
+    <span style="font-weight: bold; font-size: 90px; color: lawngreen;">Research</span>
+    <span style="font-weight: normal; font-size: 50px;">Paper</span>
+</h2>
+
+                 <p style="font-family: 'Nirmala UI', sans-serif; font-size: 18px; color: gray; line-height: 1.8; margin-left: 20px; margin-bottom: 100px">
+                The PDF on the right is a publication from VIT University and has been sourced from IEEE ACCESS.
+                This research paper, based on an IEEE publication, explores the use of hybrid machine learning techniques
+                 for predicting heart disease. It addresses the challenge of accurately predicting cardiovascular issues,
+                 achieving an 88.7% accuracy rate. This work highlights the importance of machine learning in healthcare for
+                 improving prediction accuracy in critical areas like heart disease. <a href="https://ieeexplore.ieee.org/document/8740989?denied=" style="font-family: 'Nirmala UI', sans-serif; font-size: 18px; margin-left: 380px;"class="button">
+                 Click here to view the publication
+                 </a>
+           </p>
+
+        </div>
+
+        <div class="pdf">
+            <iframe src="../static/my.pdf" style="height: 600px; width: 600px; margin-right: 20px;box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);"></iframe>
+        </div>
+    </div>
+<div class="parameter-explanation">
+    <h2 style="text-align: center; font-size: 40px; color: #be3144">Input Parameters Explanation</h2>
+    <p><strong>Age:</strong> The "Age" parameter in the context of heart attack prediction
+        refers to the age of the patient in years. Age is a crucial factor in assessing the
+        risk of heart attacks, as the likelihood of experiencing a heart attack generally increases with age.
+    Research indicates that older individuals are more prone to heart attacks due to factors such as the gradual
+        accumulation of plaque in the arteries, which can restrict blood flow to the heart. Additionally, age-related
+        changes in the heart and blood vessels can make the cardiovascular system less resilient to stress and damage,
+        further increasing the risk.</p>
+    <p><strong>Sex:</strong> The gender of the patient (1 = male; 0 = female). The "Sex" parameter in the context of heart attack prediction refers to the gender of the patient. In most datasets, sex is represented as a binary variable (1 for male, 0 for female).
+
+Sex plays a significant role in heart attack risk assessment. Men are generally at higher risk of heart attacks at a younger age compared to women. However, after menopause, women's risk of heart disease increases and may even surpass that of men in certain age groups.
+
+Biological differences between men and women, such as hormonal influences, differences in fat distribution, and variations in the size and function of the heart and blood vessels, contribute to these sex-based disparities in heart disease risk.
+
+In predictive models, sex is considered a critical factor. Including sex as a predictor helps tailor risk assessments and treatment plans to individual patients, accounting for the differences in heart disease risk between men and wome </p>
+    <p><strong>Chest Pain Type (cp):</strong> The type of chest pain experienced by the patient (1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic). Chest pain is a significant symptom of heart disease and is often
+        a key factor in diagnosing heart attacks. In predictive models, the type of chest pain can help differentiate between different cardiac and non-cardiac causes of chest pain, aiding in accurate risk assessment and treatment planning.</p>
+    <p><strong>Resting Blood Pressure (trtbps):</strong> The resting blood pressure of the patient (in mm Hg). Elevated resting blood pressure is a risk factor for heart disease, as it indicates increased pressure on the arterial walls, which can lead to damage and atherosclerosis (hardening of the arteries). Hypertension (high blood pressure) is a common condition that requires monitoring and management to reduce the risk of heart attacks and other cardiovascular events.
+
+In predictive models, resting blood pressure is considered an important predictor variable for assessing heart attack risk. Higher blood pressure values are associated with an increased risk of heart disease, and incorporating this parameter into risk assessments helps identify individuals who may benefit from lifestyle changes or medical interventions to manage their blood pressure and reduce their risk of heart attacks.</p>
+    <p><strong>Serum Cholesterol Level (chol):</strong> The serum cholesterol level of the patient (in mg/dl). The "Serum Cholesterol Level (chol)" parameter in heart attack prediction refers to the amount of cholesterol present in the patient's blood, measured in milligrams per deciliter (mg/dl). Cholesterol is a waxy substance that is essential for building cells and producing certain hormones, but high levels of cholesterol in the blood can lead to atherosclerosis, a condition where plaque builds up in the arteries and restricts blood flow.</p>
+    <p><strong>Fasting Blood Sugar (fbs):</strong> The fasting blood sugar level of the patient (> 120 mg/dl = 1; <= 120 mg/dl = 0). The "Fasting Blood Sugar (fbs)" parameter in heart attack prediction refers to the level of glucose (sugar) in the patient's blood after fasting for at least 8 hours, measured in milligrams per deciliter (mg/dl). Fasting blood sugar levels provide important information about the body's ability to regulate glucose and are used to diagnose and monitor diabetes. Normal: Less than 100 mg/dl,
+    Prediabetes (impaired fasting glucose): 100-125 mg/dl, Diabetes: 126 mg/dl and above</p>
+    <p><strong>Resting Electrocardiographic Results (restecg):</strong> The resting electrocardiographic results (0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy by Estes' criteria). The "Resting Electrocardiographic Results (restecg)" parameter in heart attack prediction refers to the results of the resting electrocardiogram (ECG or EKG) test, which measures the electrical activity of the heart while the patient is at rest. The restecg parameter is often represented as categorical values indicating different ECG patterns:</p>
+    <p><strong>Maximum Heart Rate Achieved (thalachh):</strong> The "Maximum Heart Rate Achieved (thalachh)" parameter in heart attack prediction refers to the highest heart rate achieved by the patient during exercise, typically measured in beats per minute (bpm). Thalachh is an important indicator of cardiovascular fitness and can provide insights into the heart's ability to respond to physical activity.
+
+During exercise, the heart rate increases to meet the body's increased demand for oxygen-rich blood. The maximum heart rate achieved during exercise is influenced by factors such as age, fitness level, and overall cardiovascular health. The maximum heart rate can be estimated using the formula: 220 - age.</p>
+    <p><strong>Exercise Induced Angina (exng):</strong> Whether exercise induced angina is present (1 = yes; 0 = no). The "Exercise Induced Angina (exng)" parameter in heart attack prediction refers to the presence or absence of angina (chest pain or discomfort) induced by exercise. Angina is a common symptom of coronary artery disease (CAD), which occurs when the arteries that supply blood to the heart become narrowed or blocked, reducing blood flow to the heart muscle.</p>
+    <p><strong>ST Depression Induced by Exercise Relative to Rest (oldpeak):</strong> The "ST Depression Induced by Exercise Relative to Rest (oldpeak)" parameter in heart attack prediction refers to the amount of ST segment depression observed on an electrocardiogram (ECG) during exercise compared to rest. The ST segment is a portion of the ECG waveform that reflects the electrical activity of the heart's ventricles.</p>
+    <p><strong>Slope of the Peak Exercise ST Segment (slp):</strong> The slope of the peak exercise ST segment (1 = upsloping, 2 = flat, 3 = downsloping).The "Slope of the Peak Exercise ST Segment (slp)" parameter in heart attack prediction refers to the slope of the ST segment on an electrocardiogram (ECG) during peak exercise. The ST segment is a portion of the ECG waveform that reflects the electrical activity of the heart's ventricles.</p>
+    <p><strong>Number of Major Vessels (caa):</strong> The number of major vessels (0-3) colored by fluoroscopy. The "Number of Major Vessels (caa)" parameter in heart attack prediction refers to the number of major blood vessels (coronary arteries) that are colored by fluoroscopy. Caa is typically used as a categorical variable, with the following values: Value 0: Indicates normal blood flow in all major vessels.
+    Value 1: Indicates a minor blockage in one major vessel.
+    Value 2: Indicates a moderate blockage in two major vessels.
+    Value 3: Indicates a severe blockage in three major vessels. The number of major vessels affected by blockages is an important indicator of the extent and severity of coronary artery disease (CAD). A higher number of vessels affected indicates a greater degree of CAD and an increased risk of heart attacks and other cardiac events.</p>
+    <p><strong>Thallium Stress Test Result (thall):</strong> Value 0: Normal result, indicating good blood flow to the heart muscle both during exercise and at rest.
+Value 1: Fixed defect, indicating an area of the heart muscle that has reduced blood flow both during exercise and at rest, possibly due to scarring from a previous heart attack.
+Value 2: Reversible defect, indicating an area of the heart muscle that has reduced blood flow during exercise but normal blood flow at rest, suggesting a possible blockage in the coronary arteries. The "Thallium Stress Test Result (thall)" parameter in heart attack prediction refers to the results of a thallium stress test, which is a nuclear imaging test used to evaluate blood flow to the heart muscle during exercise and at rest. Thallium is a radioactive substance that is injected into the bloodstream and detected by a special camera that takes images of the heart.</p>
+</div>
+
+    <div class="footer">
+        <p class="small-text">&copy; 2024 Our Project. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
